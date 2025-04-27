@@ -1,4 +1,3 @@
-"use client";
 import { initTRPC, TRPCError } from '@trpc/server';
 import superjson from 'superjson';
 import { createClient } from '@/lib/supabase/server';
