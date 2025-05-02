@@ -64,8 +64,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Our Location</h3>
                     <p className="text-muted-foreground">
-                      123 Business Hub, Sector 5<br />
-                      Salt Lake, Kolkata 700091
+                      13th Cross 27th main , Sector-2 phase 1 <br />
+                      HSR Layout , Bengaluru 560102
                     </p>
                   </div>
                 </div>
@@ -77,8 +77,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
                     <p className="text-muted-foreground">
-                      +91 (800) 123-4567<br />
-                      +91 (800) 123-4568
+                      +91 9991253250
                     </p>
                   </div>
                 </div>
