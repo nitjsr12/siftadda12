@@ -1,58 +1,16 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-
-// Sample data (replace with dynamic if needed)
-const serviceTypes = [
-  { id: "office", name: "Office Relocation" },
-  { id: "warehouse", name: "Warehouse Move" },
-  { id: "it", name: "IT Equipment Transfer" },
-];
-
-const cities = [
-  "Bangalore",
-  "Hyderabad",
-  "Chennai",
-  "Mumbai",
-  "Delhi",
-  "Pune",
-  "Kolkata",
-];
-
-// Background images for slider
-const slides = [
-  { image: "/images/hero1.jpeg" },
-  { image: "/images/hero1.jpeg" },
-  { image: "/images/hero1.jpeg" },
-];
-
-const heroContent = {
-  title: "Professional Business Relocation Services",
-  subtitle: "Seamless office moves with expert care and precision",
-  features: [
-    "Verified Providers",
-    "Free Quotes",
-    "Service Guarantee",
-    "Business Support",
-  ],
-};
+import { ArrowRight, CheckCircle } from "lucide-react";
+import { serviceTypes, cities } from "@/lib/constants";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0 }
 };
 
 const staggerContainer = {
@@ -60,99 +18,59 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-    },
-  },
+      staggerChildren: 0.2
+    }
+  }
 };
 
 export function Hero() {
   const [moveType, setMoveType] = useState("");
   const [location, setLocation] = useState("");
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const [sliderRef, sliderInstance] = useKeenSlider(
-    {
-      loop: true,
-      mode: "snap",
-      slides: { perView: 1, spacing: 0 },
-      defaultAnimation: { duration: 2000 },
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel);
-      },
-    },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-
-        const clearNextTimeout = () => clearTimeout(timeout);
-        const nextTimeout = () => {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => slider.next(), 5000);
-        };
-
-        slider.on("created", nextTimeout);
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
-  );
 
   return (
-    <div className="relative overflow-hidden h-screen">
-      {/* Background Image Slider */}
-      <div ref={sliderRef} className="keen-slider absolute inset-0 -z-10">
-        {slides.map((slide, idx) => (
-          <div
-            key={idx}
-            className="keen-slider__slide h-screen w-full relative"
-          >
-            <div
-              className="absolute inset-0 h-full w-full bg-cover bg-center transition-transform duration-[2s]"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-                transform: currentSlide === idx ? "scale(1.1)" : "scale(1)",
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            </div>
-          </div>
-        ))}
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* Static background image */}
+      <div className="absolute inset-0 -z-10">
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ 
+            backgroundImage: "url(https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg)",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/20" />
+        </div>
       </div>
 
-      {/* Hero Content */}
-      <div className="container px-4 md:px-6 mx-auto h-full flex flex-col justify-center z-10 relative">
-        <motion.div
+      {/* Centered content */}
+      <div className="container h-full flex items-center justify-center px-4 md:px-6 mx-auto">
+        <motion.div 
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="text-center"
+          className="w-full max-w-5xl text-center"
         >
-          <motion.h1
+          <motion.h1 
             variants={fadeIn}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-3xl mx-auto leading-tight mb-6 text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 gradient-text"
           >
-            {heroContent.title}
+            Professional Business Relocation Services
           </motion.h1>
-
-          <motion.p
+          
+          <motion.p 
             variants={fadeIn}
-            className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto mb-10"
+            className="text-xl md:text-2xl text-muted-foreground mb-10 mx-auto max-w-2xl"
           >
-            {heroContent.subtitle}
+            Seamless commercial moving solutions tailored to your business needs
           </motion.p>
 
-          {/* Select Form */}
-          <motion.div
+          <motion.div 
             variants={fadeIn}
-            className="w-full max-w-4xl bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-2xl mx-auto"
+            className="w-full glass p-6 rounded-2xl shadow-2xl mx-auto max-w-4xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
               <div className="md:col-span-3">
                 <Select value={moveType} onValueChange={setMoveType}>
-                  <SelectTrigger className="bg-white/20 text-white border-white/30">
+                  <SelectTrigger className="bg-background/80 backdrop-blur border-border/30">
                     <SelectValue placeholder="Move Type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -164,10 +82,9 @@ export function Hero() {
                   </SelectContent>
                 </Select>
               </div>
-
               <div className="md:col-span-3">
                 <Select value={location} onValueChange={setLocation}>
-                  <SelectTrigger className="bg-white/20 text-white border-white/30">
+                  <SelectTrigger className="bg-background/80 backdrop-blur border-border/30">
                     <SelectValue placeholder="Your Location" />
                   </SelectTrigger>
                   <SelectContent>
@@ -179,8 +96,10 @@ export function Hero() {
                   </SelectContent>
                 </Select>
               </div>
-
-              <Button className="md:col-span-1 h-full bg-primary text-white hover:bg-primary/90" asChild>
+              <Button 
+                className="md:col-span-1 h-full bg-primary hover:bg-primary/90" 
+                asChild
+              >
                 <Link href="/providers">
                   Find <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -188,39 +107,29 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Features */}
-          <motion.div
+          <motion.div 
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap justify-center gap-4 mt-10"
+            className="flex flex-wrap justify-center gap-6 mt-8"
           >
-            {heroContent.features.map((item, index) => (
+            {[
+              "Verified Providers",
+              "Free Quotes",
+              "Service Guarantee",
+              "Business Support"
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 variants={fadeIn}
-                className="flex items-center px-4 py-2 bg-white/10 text-white backdrop-blur-sm rounded-full"
+                className="flex items-center px-4 py-2 glass rounded-full"
               >
-                <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
-                <span>{item}</span>
+                <CheckCircle className="h-4 w-4 text-primary mr-2" />
+                <span className="text-foreground">{item}</span>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => sliderInstance.current?.moveToIdx(idx)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              currentSlide === idx ? "w-8 bg-white" : "bg-white/30"
-            }`}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
       </div>
     </div>
   );
