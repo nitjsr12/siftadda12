@@ -163,7 +163,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <nav className="flex flex-col space-y-2 py-4">
+              <nav className="flex flex-col space-y-2 py-4 bg-background/95 backdrop-blur-lg">
                 {items?.map((item, index) => (
                   <div key={index} className="flex flex-col">
                     <div className="flex items-center justify-between">

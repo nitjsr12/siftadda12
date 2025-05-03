@@ -57,3 +57,14 @@ export interface QuoteRequest {
   toLocation: string;
   description: string;
 }
+// lib/types.ts
+export interface NavItem {
+  title: string;
+  href: string;
+  subItems?: SubItem[];
+}
+
+export interface SubItem {
+  title: string;
+  href: string;
+}
