@@ -60,7 +60,7 @@ export function Hero() {
             variants={fadeIn}
             className="text-xl md:text-2xl text-muted-foreground mb-10 mx-auto max-w-2xl"
           >
-            Seamless commercial moving solutions tailored to your business needs
+            Seamless commercial moving solutions tailored to your Personal & business needs
           </motion.p>
 
           <motion.div 

@@ -7,23 +7,37 @@ import { Feature } from "@/lib/types";
 import { 
   TrendingUp, 
   Shield, 
-  ListChecks, 
   Clock, 
   Headphones, 
   LayoutDashboard, 
   Star, 
-  DollarSign 
+  DollarSign ,
+  Package,
+  BadgeCheck,
+  Home,
+  Briefcase,
+  MapPin,
+  Boxes,
+  Car,
+  ShieldCheck,
 } from "lucide-react";
 
 const iconMap = {
   TrendingUp,
-  Shield,
-  ListChecks,
   Clock,
   Headphones,
   LayoutDashboard,
   Star,
   DollarSign,
+  BadgeCheck,
+  Package,
+  Home,
+  Briefcase,
+  Shield,
+  MapPin,
+  Boxes,
+  Car,
+  ShieldCheck,
 };
 
 const fadeInUp = {
@@ -121,11 +135,13 @@ export function FeaturesSection({
 export function BusinessFeatures() {
   return (
     <FeaturesSection
-      title="For Businesses"
-      subtitle="Find reliable moving partners for your organization's relocation needs."
+      title="Our Promise to You"
+      subtitle="At ShiftAdda, we believe moving should be simple, affordable, and worry-free. With 9+ years of logistics experience and a team of trained professionals, we handle every move with care – from packing delicate items to safely delivering them to your new home or office."
       features={businessFeatures}
-      image="https://images.pexels.com/photos/6169659/pexels-photo-6169659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      subtile="ShiftAdda is Bangalore-born and Bangalore-focused – we know your city, your routes, and your moving needs."
+      image="/images/promise.png"
       altText="Business office moving"
+
     />
   );
 }
@@ -137,7 +153,7 @@ export function ProviderFeatures() {
       subtitle="Grow your moving business by connecting with quality clients."
       features={providerFeatures}
       reversed={true}
-      image="https://images.pexels.com/photos/6168111/pexels-photo-6168111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image="/images/services.png"
       altText="Moving service provider"
     />
   );

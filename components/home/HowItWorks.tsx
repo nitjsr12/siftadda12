@@ -7,6 +7,8 @@ import {
   CheckCircle,
   Calendar,
   ArrowRight,
+  Wallet,
+  Truck,
 } from "lucide-react";
 
 const iconMap = {
@@ -14,7 +16,11 @@ const iconMap = {
   Layers,
   CheckCircle,
   Calendar,
-};
+  Wallet,
+  Truck,
+
+}
+
 
 export function HowItWorks() {
   const IconComponent = (iconName: string) => {

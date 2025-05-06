@@ -52,9 +52,9 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
               transition={{ duration: 0.2 }}
             >
               <img
-                src="/images/ShiftAdda.png"
+                src="/images/logo.png"
                 alt="Logo"
-                className="h-[80px] w-auto transition-all duration-300 group-hover:opacity-90"
+                className="h-[60px] w-auto transition-all duration-300 group-hover:opacity-90"
               />
             </motion.div>
           </Link>

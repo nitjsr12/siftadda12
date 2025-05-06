@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { testimonials } from "@/lib/constants";
 import { Testimonial } from "@/lib/types";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
@@ -43,7 +44,7 @@ export function Testimonials() {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
-            Trusted by Businesses
+            Trusted by Customers
           </h2>
           <p className="text-muted-foreground text-lg">
             See what our customers have to say about their experience with our platform
@@ -58,12 +59,8 @@ export function Testimonials() {
             <div className="relative">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="shrink-0">
-                  <div className="relative w-24 h-24 md:w-32 md:h-32 overflow-hidden rounded-full border-4 border-background shadow-md">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
+                    
+                  
                   </div>
                 </div>
                 <div className="flex-1">
@@ -111,7 +108,6 @@ export function Testimonials() {
             <ChevronRight className="h-6 w-6" />
           </button>
         </div>
-      </div>
     </section>
   );
 }

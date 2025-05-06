@@ -51,49 +51,43 @@ export const cities = [
 
 export const howItWorksSteps = [
   {
-    title: "Share Your Requirements",
-    description: "Tell us about your moving needs, timeline, and special requirements.",
+    title: "Request a Free Quote",
+    description: "Fill out our quick form or give us a call—we’ll get the details we need to start your move.",
     icon: "ClipboardList",
   },
   {
-    title: "Get Multiple Quotes",
-    description: "Receive customized quotes from verified professional movers.",
-    icon: "Layers",
+    title: "Get an Estimate",
+    description: "Receive a clear, all-inclusive quote with no hidden charges.",
+    icon: "Wallet",
   },
   {
-    title: "Compare & Select",
-    description: "Compare services, reviews, and pricing to find the perfect match.",
-    icon: "CheckCircle",
-  },
-  {
-    title: "Book with Confidence",
-    description: "Schedule your move with secure payment and service guarantees.",
+    title: "Schedule Your Move",
+    description: "Pick a date and time that works for you—we’ll take care of the rest.",
     icon: "Calendar",
+  },
+  {
+    title: "Relax While We Shift You",
+    description: "Our expert team handles packing, lifting, and delivery—so you don’t have to lift a finger.",
+    icon: "Truck",
   },
 ];
 
 export const testimonials = [
   {
-    name: "Priya Sharma",
-    company: "TechSolutions Inc.",
-    comment: "ShiftAdda helped us relocate our entire office seamlessly. The platform made it easy to find reliable movers who understood our specific requirements.",
+    name: "Ankit R",
+    company: "HSR Layout",
+    comment: "ShiftAdda made my 2BHK move seamless! The team was punctual, careful, and friendly.",
     image: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 5,
   },
   {
-    name: "Rajiv Mehta",
-    company: "GlobalRetail Ltd.",
-    comment: "Moving our inventory between warehouses used to be a logistical nightmare until we found ShiftAdda. Now we have trusted partners we can rely on.",
+    name: "Priya M",
+    company: "Whitefield.",
+    comment: "I’ve used big-name movers before, but ShiftAdda’s service was better and affordable.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
-  {
-    name: "Sarah Johnson",
-    company: "Innovate Design Studio",
-    comment: "The ability to compare multiple quotes from verified providers saved us both time and money. Excellent service all around!",
-    image: "https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&cs=tinysrgb&w=600",
-    rating: 5,
-  },
+  
 ];
 
 export const faqs = [
@@ -121,46 +115,56 @@ export const faqs = [
 
 export const providerFeatures = [
   {
-    title: "Business Growth",
-    description: "Connect with businesses looking for your exact services and grow your client base.",
-    icon: "TrendingUp",
+    title: "Home Shifting (1 BHK to 5 BHK)",
+    description: "Safe packing, loading/unloading, and transport—your home is in secure hands.",
+    icon: "Home",
   },
   {
-    title: "Simplified Management",
-    description: "Manage bookings, quotes, and client communications all in one place.",
-    icon: "LayoutDashboard",
+    title: "Office Relocation",
+    description: "Quick, organized moves with disassembly and reinstallation—minimal disruption.",
+    icon: "Briefcase",
   },
   {
-    title: "Build Reputation",
-    description: "Collect verified reviews and build your online reputation to stand out from competitors.",
-    icon: "Star",
+    title: "Local & Intercity Moves",
+    description: "We handle relocations across Bangalore and major Indian cities.",
+    icon: "MapPin",
   },
   {
-    title: "Reduce Marketing Costs",
-    description: "Lower your customer acquisition costs with our targeted platform approach.",
-    icon: "DollarSign",
+    title: "Packing Services Only",
+    description: "Need help packing? We supply high-quality materials and professional packers.",
+    icon: "Boxes",
+  },
+  {
+    title: "Two-Wheeler & Car Transport",
+    description: "Vehicles moved with care in secure, enclosed carriers.",
+    icon: "Car",
+  },
+  {
+    title: "Storage Services (Coming Soon)",
+    description: "Short-term storage with 24/7 security and flexible access.",
+    icon: "ShieldCheck",
   },
 ];
 
 export const businessFeatures = [
   {
-    title: "Verified Providers",
-    description: "All movers on our platform are verified for quality, reliability and insurance coverage.",
-    icon: "Shield",
+    title: "Transparent Pricing",
+    description: "No hidden fees—just honest, upfront rates you can trust.",
+    icon: "BadgeCheck",
   },
   {
-    title: "Compare Options",
-    description: "Easily compare services, pricing, and reviews to find the perfect match for your needs.",
-    icon: "ListChecks",
-  },
-  {
-    title: "Save Time & Money",
-    description: "Request multiple quotes with one form and negotiate the best rates for your business.",
+    title: "Reliable, On-Time Service",
+    description: "We value your time and always deliver as promised.",
     icon: "Clock",
   },
   {
-    title: "Dedicated Support",
-    description: "Our team provides assistance throughout the entire moving process.",
+    title: "High-Quality Packing Materials",
+    description: "Top-grade materials to keep your items safe in transit.",
+    icon: "Package",
+  },
+  {
+    title: "Friendly Support from Start to Finish",
+   description: "Helpful, caring support at every step of your move.",
     icon: "Headphones",
   },
 ];
