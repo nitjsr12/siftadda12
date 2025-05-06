@@ -138,7 +138,6 @@ export function BusinessFeatures() {
       title="Our Promise to You"
       subtitle="At ShiftAdda, we believe moving should be simple, affordable, and worry-free. With 9+ years of logistics experience and a team of trained professionals, we handle every move with care – from packing delicate items to safely delivering them to your new home or office."
       features={businessFeatures}
-      subtile="ShiftAdda is Bangalore-born and Bangalore-focused – we know your city, your routes, and your moving needs."
       image="/images/promise.png"
       altText="Business office moving"
 
