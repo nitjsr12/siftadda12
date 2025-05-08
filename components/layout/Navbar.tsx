@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/constants";
-import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp, Phone, MessageSquare, Info, Rss, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavItem } from "@/lib/types";
@@ -15,10 +15,17 @@ interface NavbarProps {
   items?: NavItem[];
 }
 
+export interface SubItem {
+  title: string;
+  href: string;
+  icon?: React.ElementType<{ className?: string }>; // Correctly type 'icon' as a React component
+}
+
 export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -52,7 +59,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
               transition={{ duration: 0.2 }}
             >
               <img
-                src="/images/logo.png"
+                src="/images/shiftadd (1) (1).png"
                 alt="Logo"
                 className="h-[60px] w-auto transition-all duration-300 group-hover:opacity-90"
               />
@@ -62,22 +69,43 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {items?.map((item, index) => (
-              <div key={index} className="relative group">
+              <div 
+                key={index} 
+                className="relative group"
+                onMouseEnter={() => {
+                  setHoveredItem(index);
+                  if (item.subItems) setActiveSubmenu(index);
+                }}
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  if (!item.subItems) setActiveSubmenu(null);
+                }}
+              >
                 <Link
                   href={item.href}
                   className={cn(
-                    "px-4 py-2 rounded-lg font-medium transition-all flex items-center",
-                    "hover:bg-gray-100 dark:hover:bg-gray-800",
+                    "px-4 py-2 rounded-lg font-medium transition-all flex items-center relative",
+                    "hover:text-primary",
                     pathname === item.href
-                      ? "text-primary bg-gray-100 dark:bg-gray-800"
+                      ? "text-primary"
                       : "text-muted-foreground"
                   )}
-                  onMouseEnter={() => item.subItems && setActiveSubmenu(index)}
                 >
                   {item.title}
                   {item.subItems && (
-                    <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                    <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200" />
                   )}
+                  
+                  {/* Animated underline */}
+                  <motion.span
+                    initial={{ scaleX: 0 }}
+                    animate={{ 
+                      scaleX: hoveredItem === index || pathname === item.href ? 1 : 0,
+                      opacity: hoveredItem === index || pathname === item.href ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left"
+                  />
                 </Link>
 
                 {item.subItems && (
@@ -89,24 +117,24 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                     }}
                     transition={{ duration: 0.2 }}
                     className={cn(
-                      "absolute left-0 top-full mt-1 w-48 rounded-lg shadow-lg p-2",
+                      "absolute left-0 top-full mt-1 w-56 rounded-xl shadow-lg p-2",
                       "bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700",
                       activeSubmenu === index ? "block" : "hidden"
                     )}
-                    onMouseLeave={() => setActiveSubmenu(null)}
                   >
                     {item.subItems.map((subItem, subIndex) => (
                       <Link
                         key={subIndex}
                         href={subItem.href}
                         className={cn(
-                          "block px-4 py-2 rounded-md text-sm transition-colors",
+                          "flex items-center px-4 py-3 rounded-lg text-sm transition-colors gap-2",
                           "hover:bg-gray-100 dark:hover:bg-gray-800",
                           pathname === subItem.href
                             ? "text-primary font-medium"
                             : "text-muted-foreground"
                         )}
                       >
+                        {subItem.icon && <subItem.icon className="h-4 w-4" />}
                         {subItem.title}
                       </Link>
                     ))}
@@ -122,17 +150,19 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
               variant="ghost"
               size="sm"
               asChild
-              className="hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
             >
               <Link href="/signin">Sign In</Link>
             </Button>
-            <Button
-              size="sm"
-              asChild
-              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all"
-            >
-              <Link href="/signup">Get Started</Link>
-            </Button>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <Button
+                size="sm"
+                asChild
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all rounded-full px-6"
+              >
+                <Link href="/signup">Get Started</Link>
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -175,13 +205,14 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                           }
                         }}
                         className={cn(
-                          "text-base font-medium px-4 py-3 rounded-lg transition-colors w-full",
+                          "text-base font-medium px-4 py-3 rounded-lg transition-colors w-full flex items-center gap-2",
                           "hover:bg-gray-100 dark:hover:bg-gray-800",
                           pathname === item.href
-                            ? "text-primary bg-gray-100 dark:bg-gray-800"
+                            ? "text-primary"
                             : "text-muted-foreground"
                         )}
                       >
+                        {item.icon && <item.icon className="h-5 w-5" />}
                         {item.title}
                       </Link>
                       {item.subItems && (
@@ -203,7 +234,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="pl-6 mt-1 space-y-1"
+                        className="pl-8 mt-1 space-y-1"
                       >
                         {item.subItems.map((subItem, subIndex) => (
                           <Link
@@ -211,13 +242,14 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                             href={subItem.href}
                             onClick={() => setIsOpen(false)}
                             className={cn(
-                              "block px-4 py-2 rounded-lg text-sm",
+                              "flex items-center px-4 py-3 rounded-lg text-sm gap-3",
                               "hover:bg-gray-100 dark:hover:bg-gray-800",
                               pathname === subItem.href
                                 ? "text-primary font-medium"
                                 : "text-muted-foreground"
                             )}
                           >
+                            {subItem.icon && <subItem.icon className="h-4 w-4" />}
                             {subItem.title}
                           </Link>
                         ))}
@@ -225,21 +257,25 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                     )}
                   </div>
                 ))}
-                <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 dark:border-gray-800">
+                <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 dark:border-gray-800 px-2">
                   <Button
                     variant="ghost"
                     size="sm"
                     asChild
-                    className="w-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                    className="w-full hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full justify-start px-4 py-3"
                   >
-                    <Link href="/signin">Sign In</Link>
+                    <Link href="/signin" className="flex items-center gap-2">
+                      <span>Sign In</span>
+                    </Link>
                   </Button>
                   <Button
                     size="sm"
                     asChild
-                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-full px-4 py-3"
                   >
-                    <Link href="/signup">Get Started</Link>
+                    <Link href="/signup" className="flex items-center gap-2">
+                      <span>Get Started</span>
+                    </Link>
                   </Button>
                 </div>
               </nav>

@@ -1,178 +1,245 @@
+"use client";
+
 import Link from "next/link";
-import { TruckIcon } from "lucide-react";
+import { TruckIcon, Phone, Mail, MapPin, MessageCircle, X ,ArrowRight  } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [showContactPanel, setShowContactPanel] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   return (
-    <footer className="border-t bg-background">
-      <div className="container px-4 md:px-6 py-12 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-              <TruckIcon className="h-6 w-6 text-primary" />
-              <span className="font-bold text-xl">{siteConfig.name}</span>
-            </Link>
-            <p className="mt-3 text-muted-foreground text-sm">
-              {siteConfig.description}
-            </p>
-            <div className="flex mt-4 space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
+    <>
+      {/* Contact Info Floating Button */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ 
+          opacity: isVisible ? 1 : 0,
+          scale: isVisible ? 1 : 0.5
+        }}
+        transition={{ duration: 0.3 }}
+        className={`fixed bottom-6 left-6 z-50 ${isVisible ? 'block' : 'hidden'}`}
+      >
+        
+      </motion.div>
+
+      {/* WhatsApp Floating Button */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ 
+          opacity: isVisible ? 1 : 0,
+          scale: isVisible ? 1 : 0.5
+        }}
+        transition={{ duration: 0.3 }}
+        className={`fixed bottom-6 right-6 z-50 ${isVisible ? 'block' : 'hidden'}`}
+      >
+        <a
+          href="https://wa.me/919991253250"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </a>
+      </motion.div>
+
+      {/* Full-page Contact Panel */}
+      <AnimatePresence>
+        {showContactPanel && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowContactPanel(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-background rounded-xl shadow-2xl max-w-md w-full p-6 relative"
+            >
+              <button
+                onClick={() => setShowContactPanel(false)}
+                className="absolute top-4 right-4 text-muted-foreground hover:text-primary"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              
+              <h3 className="text-2xl font-bold mb-6">Contact Us</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Our Location</h4>
+                    <address className="text-muted-foreground not-italic mt-1">
+                    13th Cross 27th main , Sector-2 phase 1
+                    HSR Layout , Bengaluru 560102
+                    </address>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Call Us</h4>
+                    <a href="tel:+919991253250" className="text-muted-foreground hover:text-primary mt-1 block">
+                    +91 9991253250
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Email Us</h4>
+                    <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary mt-1 block">
+                    contact@shiftadda.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-border/30">
+                <h4 className="font-semibold mb-3">Business Hours</h4>
+                <div className="text-muted-foreground space-y-1">
+                  <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+                  <p>Saturday: 9:00 AM - 6:00 PM</p>
+                  <p>Sunday: Emergency services only</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Footer */}
+      <footer className="border-t bg-background">
+        <div className="container px-4 md:px-6 py-12 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div className="md:col-span-2">
+              <Link href="/" className="flex items-center space-x-2">
+                <TruckIcon className="h-6 w-6 text-primary" />
+                <span className="font-bold text-xl">{siteConfig.name}</span>
+              </Link>
+              <p className="mt-3 text-muted-foreground text-sm">
+                {siteConfig.description}
+              </p>
+              
+              <div className="flex mt-6 space-x-4">
+                {siteConfig.socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            
             <div>
-              <h3 className="font-semibold text-lg mb-3">For Businesses</h3>
+              <h3 className="font-semibold text-lg mb-3">Services</h3>
               <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/for-business" className="text-muted-foreground hover:text-primary">
-                    How It Works
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/providers" className="text-muted-foreground hover:text-primary">
-                    Find Movers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="text-muted-foreground hover:text-primary">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/business-resources" className="text-muted-foreground hover:text-primary">
-                    Resources
-                  </Link>
-                </li>
+                {siteConfig.services.map((service) => (
+                  <li key={service.name}>
+                    <Link href={service.href} className="text-muted-foreground hover:text-primary">
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-3">For Providers</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/for-providers" className="text-muted-foreground hover:text-primary">
-                    Join as Provider
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/provider-resources" className="text-muted-foreground hover:text-primary">
-                    Success Stories
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/provider-faq" className="text-muted-foreground hover:text-primary">
-                    Provider FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/provider-support" className="text-muted-foreground hover:text-primary">
-                    Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            
             <div>
               <h3 className="font-semibold text-lg mb-3">Company</h3>
               <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/about" className="text-muted-foreground hover:text-primary">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-primary">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-muted-foreground hover:text-primary">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-muted-foreground hover:text-primary">
-                    Blog
-                  </Link>
-                </li>
+                {siteConfig.companyLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-muted-foreground hover:text-primary">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
+            
+            {/* Dedicated Contact Column */}
+            <div>
+              <h3 className="font-semibold text-lg mb-3">Contact</h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                  13th Cross 27th main , Sector-2 phase 1
+                  HSR Layout , Bengaluru 560102
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <a href="tel:+91991253250" className="text-muted-foreground hover:text-primary">
+                    +91 9991253250
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary">
+                    contact@shiftadda.com
+                  </a>
+                </li>
+              </ul>
+              
+              <button
+                onClick={() => setShowContactPanel(true)}
+                className="mt-4 text-sm font-medium text-primary hover:text-primary/80 flex items-center gap-1"
+              >
+                View full contact details
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="mt-10 pt-8 border-t text-center text-sm text-muted-foreground">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <Link href="/terms" className="hover:text-primary">
-                Terms of Service
-              </Link>
-              <Link href="/privacy" className="hover:text-primary">
-                Privacy Policy
-              </Link>
-              <Link href="/cookie-policy" className="hover:text-primary">
-                Cookie Policy
-              </Link>
+          
+          <div className="mt-10 pt-8 border-t text-center text-sm text-muted-foreground">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+              <div className="flex space-x-6">
+                {siteConfig.footerLinks.map((link) => (
+                  <Link key={link.name} href={link.href} className="hover:text-primary">
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

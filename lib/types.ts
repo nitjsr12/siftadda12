@@ -16,6 +16,17 @@ export interface Provider {
   description: string;
 }
 
+export interface SubItem {
+  title: string;
+  href: string;
+  icon?: React.ElementType<{ className?: string }>; // Correctly type 'icon' as a React component
+}
+export interface NavItem {
+  title: string;
+  href: string;
+  icon?: React.ElementType<{ className?: string }>; // Add the 'icon' property
+  subItems?: SubItem[];
+}
 export interface Testimonial {
   name: string;
   company: string;

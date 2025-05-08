@@ -1,54 +1,217 @@
+import { Home, Wrench, Truck, Map, Package, Warehouse, Info, Rss, Phone,Briefcase,Car,Box,Globe,FacebookIcon, Instagram, Linkedin, LinkedinIcon, TwitchIcon, X } from "lucide-react";
+
 export const siteConfig = {
+  
   name: "ShiftAdda",
   description: "The premier B2B platform connecting businesses with professional packers and movers.",
+  socialLinks: [
+    {
+      name: "Facebook",
+      href: "#",
+      icon: FacebookIcon // Import from lucide-react
+    },
+    {
+      name: "Instagram",
+      href: "#",
+      icon: Instagram // Import from lucide-react
+    },
+    {
+      name: "LinkedIn",
+      href: "#",
+      icon: LinkedinIcon // Import from lucide-react
+    },
+    {
+      name: "Twitter",
+      href: "#",
+      icon: X // Import from lucide-react
+    },
+    
+  ],
+  services: [
+    {
+      name: "Local Moving",
+      href: "/local-moving"
+    },
+    {
+      name: "Long Distance Moving",
+      href: "/long-distance-moving"
+    },
+    {
+      name: "Packing Services",
+      href: "/packing-services"
+    },
+    {
+      name: "Storage Solutions",
+      href: "/storage-solutions"
+    },
+    {
+      name: "Find Movers",
+      href: "/find-movers"
+    },
+    {
+      name: "For Businesses",
+      href: "/for-businesses"
+    },
+    {
+      name: "For Providers",
+      href: "/for-providers"
+    },
+    // Add other services
+  ],
+  companyLinks: [
+    {
+      name: "About Us",
+      href: "/about"
+    },
+    {
+      name: "Careers",
+      href: "/careers"
+    },
+    {
+      name: "Blog",
+      href: "/blog"
+    },
+    {
+      name: "Contact Us",
+      href: "/contact"
+    },
+    {
+      name: "Terms of Service",
+      href: "/terms"
+    },
+    {
+      name: "FAQ",
+      href: "/faq"
+    },
+
+    // Add other company links
+  ],
+  footerLinks: [
+    {
+      name: "Privacy Policy",
+      href: "/privacy"
+    },
+    // Add other footer links
+  ],
   mainNav: [
     {
       title: "Home",
       href: "/",
+      icon: Home // Import from lucide-react
     },
     {
-      title: "Find Movers",
-      href: "/providers",
+      title: "About Us",
+      href: "/about",
+      icon: Info
     },
     {
-      title: "For Businesses",
-      href: "/for-business",
+      title: "Services",
+      href: "/services",
+      icon: Wrench,
+      // subItems: [
+      //   {
+      //     title: "Local Moving",
+      //     href: "/services/local-moving",
+      //     icon: Truck
+      //   },
+      //   {
+      //     title: "Long Distance",
+      //     href: "/services/long-distance",
+      //     icon: Map
+      //   },
+      //   {
+      //     title: "Packing Services",
+      //     href: "/services/packing",
+      //     icon: Package
+      //   },
+      //   {
+      //     title: "Storage Solutions",
+      //     href: "/services/storage",
+      //     icon: Warehouse
+      //   },
+      //   {
+      //     title: "Find Movers",
+      //     href: "/providers",
+      //   },
+      //   {
+      //     title: "For Businesses",
+      //     href: "/for-business",
+      //   },
+      //   {
+      //     title: "For Providers",
+      //     href: "/for-providers",
+      //   },
+      //   {
+      //     title: "How It Works",
+      //     href: "/how-it-works",
+      //   }
+      // ]
+    },
+    
+    {
+      title: "Blog",
+      href: "/blog",
+      icon: Rss
     },
     {
-      title: "For Providers",
-      href: "/for-providers",
-    },
-    {
-      title: "How It Works",
-      href: "/how-it-works",
-    },
+      title: "Contact",
+      href: "/contact",
+      icon: Phone
+    }
   ],
-};
+} 
 
 export const serviceTypes = [
-  { name: "Office Relocation", id: "office-relocation" },
-  { name: "Warehouse Moving", id: "warehouse-moving" },
-  { name: "Equipment Transport", id: "equipment-transport" },
-  { name: "Retail Relocation", id: "retail-relocation" },
-  { name: "International Shipping", id: "international-shipping" },
-  { name: "Storage Solutions", id: "storage-solutions" },
+  {
+    id: "house",
+    name: "Household Items",
+    icon: Home
+  },
+  {
+    id: "office",
+    name: "Office Equipment",
+    icon: Briefcase
+  },
+  {
+    id: "vehicle",
+    name: "Vehicle Transport",
+    icon: Car
+  },
+  {
+    id: "packing",
+    name: "Packing Only",
+    icon: Box
+  },
+  {
+    id: "storage",
+    name: "Storage Needed",
+    icon: Warehouse
+  },
+  {
+    id: "international",
+    name: "International Move",
+    icon: Globe
+  }
 ];
-
+export const socialLinks = [
+  {
+    name: "Facebook",
+    href: "#",
+    icon: FacebookIcon // Import from lucide-react
+  },
+]
 export const cities = [
   "Mumbai",
   "Delhi",
-  "Bengaluru",
+  "Bangalore",
   "Hyderabad",
   "Chennai",
   "Kolkata",
   "Pune",
   "Ahmedabad",
-  "Jaipur",
-  "Lucknow",
   "Surat",
-  "Kanpur",
+  "Jaipur"
 ];
-
 export const howItWorksSteps = [
   {
     title: "Request a Free Quote",
