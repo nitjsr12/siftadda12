@@ -2,33 +2,63 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Box, Truck, ShieldCheck, CalendarCheck, MapPin, Home, Briefcase, Car, Warehouse, Globe,Phone, } from "lucide-react";
-import { serviceTypes, cities } from "@/lib/constants";
+import { Box, Truck, ShieldCheck, CalendarCheck, MapPin, Phone } from "lucide-react";
+import { serviceTypes } from "@/lib/constants";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { format } from "date-fns";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
 export function Hero() {
-  const [moveType, setMoveType] = useState("");
-  const [location, setLocation] = useState("");
+  const [formData, setFormData] = useState({
+    moveType: "",
+    pickupLocation: "",
+    dropLocation: "",
+    phoneNumber: "",
+    date: undefined as Date | undefined
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (field: string, value: string | Date) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+    
+    // Validate required fields
+    if (!formData.moveType || !formData.pickupLocation || !formData.dropLocation || !formData.phoneNumber) {
+      alert("Please fill all required fields");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Format WhatsApp message
+    const message = `*New Moving Request*%0A%0A
+*Service Type:* ${formData.moveType}%0A
+*Pickup Location:* ${formData.pickupLocation}%0A
+*Drop Location:* ${formData.dropLocation}%0A
+*Phone Number:* ${formData.phoneNumber}%0A
+*Moving Date:* ${formData.date ? format(formData.date, 'dd/MM/yyyy') : 'Not specified'}`;
+
+    // Encode message for WhatsApp URL
+    const encodedMessage = encodeURIComponent(message.trim());
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/917256889395?text=${encodedMessage}`, '_blank');
+    
+    setIsSubmitting(false);
+  };
 
   return (
-    <div className="relative w-full overflow-hidden pt-32 pb-20"> 
+    <div className="relative w-full overflow-hidden pt-32 pb-20">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div 
@@ -42,39 +72,33 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container flex items-center justify-center px-4 md:px-6 mx-auto">
+      <div className="container px-4 md:px-6 mx-auto">
         <motion.div 
           initial="hidden"
           animate="visible"
-          variants={staggerContainer}
-          className="w-full max-w-6xl text-center"
+          variants={fadeIn}
+          className="w-full max-w-4xl mx-auto text-center"
         >
-          <motion.h1 
-            variants={fadeIn}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6"
-          >
+          <h3 className="text-4xl md:text-2xl lg:text-2xl font-bold tracking-tight leading-tight mb-6">
             <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               Stress-Free Moving
             </span> <br />
             Done Right
-          </motion.h1>
+          </h3>
           
-          <motion.p 
-            variants={fadeIn}
-            className="text-xl md:text-2xl text-muted-foreground mb-10 mx-auto max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10">
             Trusted by thousands for reliable packing, moving, and storage solutions across India.
-            Get matched with professional movers in minutes.
-          </motion.p>
+          </p>
 
-          {/* Moving Calculator */}
-          <motion.div 
-            variants={fadeIn}
-            className="w-full bg-background/80 backdrop-blur-md p-6 rounded-2xl shadow-xl mx-auto max-w-4xl border border-border/30"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-8 gap-4">
-              <div className="md:col-span-3">
-                <Select value={moveType} onValueChange={setMoveType}>
+          {/* Moving Form */}
+          <div className="w-full bg-background/80 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-border/30">
+            <div className="space-y-4">
+              {/* Service Type */}
+              <div>
+                <Select 
+                  value={formData.moveType} 
+                  onValueChange={(value) => handleChange('moveType', value)}
+                >
                   <SelectTrigger className="h-14 text-base">
                     <div className="flex items-center gap-2">
                       <Box className="h-5 w-5 text-primary" />
@@ -83,7 +107,7 @@ export function Hero() {
                   </SelectTrigger>
                   <SelectContent>
                     {serviceTypes.map((service) => (
-                      <SelectItem key={service.id} value={service.id} className="text-base">
+                      <SelectItem key={service.id} value={service.name} className="text-base">
                         <div className="flex items-center gap-2">
                           {service.icon && <service.icon className="h-4 w-4" />}
                           {service.name}
@@ -94,48 +118,91 @@ export function Hero() {
                 </Select>
               </div>
               
-              <div className="md:col-span-3">
-                <Select value={location} onValueChange={setLocation}>
-                  <SelectTrigger className="h-14 text-base">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-5 w-5 text-primary" />
-                      <SelectValue placeholder="Moving from?" />
-                    </div>
-                  </SelectTrigger>
-                  <SelectContent>
-                    {cities.map((city) => (
-                      <SelectItem key={city} value={city} className="text-base">
-                        {city}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              {/* Pickup Location */}
+              <div>
+                <div className="flex items-center gap-2 mb-1 ml-1">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <label className="text-sm font-medium">Pickup Location*</label>
+                </div>
+                <Input 
+                  className="h-14 text-base"
+                  placeholder="HSR Layout, Bengaluru..."
+                  value={formData.pickupLocation}
+                  onChange={(e) => handleChange('pickupLocation', e.target.value)}
+                  required
+                />
               </div>
               
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="md:col-span-2"
+              {/* Drop Location */}
+              <div>
+                <div className="flex items-center gap-2 mb-1 ml-1">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <label className="text-sm font-medium">Drop Location*</label>
+                </div>
+                <Input 
+                  className="h-14 text-base"
+                  placeholder="Electronic City, Bengaluru..."
+                  value={formData.dropLocation}
+                  onChange={(e) => handleChange('dropLocation', e.target.value)}
+                  required
+                />
+              </div>
+              
+              {/* Phone Number */}
+              <div>
+                <div className="flex items-center gap-2 mb-1 ml-1">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <label className="text-sm font-medium">Phone Number*</label>
+                </div>
+                <Input 
+                  className="h-14 text-base"
+                  placeholder="7256889395"
+                  type="tel"
+                  value={formData.phoneNumber}
+                  onChange={(e) => handleChange('phoneNumber', e.target.value)}
+                  required
+                />
+              </div>
+              
+              {/* Moving Date */}
+              <div>
+                <div className="flex items-center gap-2 mb-1 ml-1">
+                  <CalendarCheck className="h-4 w-4 text-primary" />
+                  <label className="text-sm font-medium">Shifting Date</label>
+                </div>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant={"outline"}
+                      className={`h-14 w-full text-base justify-start text-left font-normal ${!formData.date && "text-muted-foreground"}`}
+                    >
+                      {formData.date ? format(formData.date, "dd/MM/yyyy") : <span>Pick a date</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={formData.date}
+                      onSelect={(date) => handleChange('date', date as Date)}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+              
+              {/* Submit Button */}
+              <Button 
+                className="w-full h-14 text-base bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 mt-4"
+                onClick={handleSubmit}
+                disabled={isSubmitting}
               >
-                <Button 
-                  className="w-full h-14 text-base bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90"
-                  asChild
-                >
-                  <Link href="/providers">
-                    Get Quotes
-                  </Link>
-                </Button>
-              </motion.div>
+                {isSubmitting ? "Processing..." : "Check Price on WhatsApp"}
+              </Button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Features */}
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap justify-center gap-4 mt-8"
-          >
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             {[
               { text: "Verified Packers", icon: ShieldCheck },
               { text: "Free Estimates", icon: CalendarCheck },
@@ -143,34 +210,15 @@ export function Hero() {
               { text: "24/7 Support", icon: Phone },
               { text: "Same Day Service", icon: Truck }
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeIn}
-                whileHover={{ y: -3 }}
                 className="flex items-center px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full border border-border/30 shadow-sm"
               >
                 <item.icon className="h-5 w-5 text-primary mr-2" />
                 <span className="text-foreground font-medium">{item.text}</span>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-          
-          {/* Trust indicators */}
-          <motion.div 
-            variants={fadeIn}
-            className="mt-12 text-muted-foreground flex flex-col items-center"
-          >
-            <div className="flex items-center space-x-4 mb-2">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <div key={star} className="text-yellow-400">
-                  ★
-                </div>
-              ))}
-            </div>
-            <p className="text-sm md:text-base">
-              Trusted by <span className="font-semibold text-foreground">15,000+ families</span> and <span className="font-semibold text-foreground">500+ businesses</span>
-            </p>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>
