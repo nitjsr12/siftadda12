@@ -180,9 +180,9 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 {siteConfig.services.map((service) => (
                   <li key={service.name}>
-                    {/* <Link href={service.href} className="text-muted-foreground hover:text-primary">
+                    <Link href={service.href} className="text-muted-foreground hover:text-primary">
                       {service.name}
-                    </Link> */}
+                    </Link> 
                   </li>
                 ))}
               </ul>
@@ -214,14 +214,14 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-primary" />
-                  <a href="tel:+91991253250" className="text-muted-foreground hover:text-primary">
+                  <a href="tel:+919740894949" className="text-muted-foreground hover:text-primary">
                     +91 9740894949
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-primary" />
                   <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary">
-                    contact@shiftadda.com
+                  contact@shiftadda.com
                   </a>
                 </li>
               </ul>

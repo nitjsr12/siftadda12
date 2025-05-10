@@ -13,21 +13,69 @@ import Link from "next/link";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success("Message sent successfully! We'll get back to you soon.");
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      // Send to WhatsApp
+      const whatsappMessage = `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\nMessage: ${formData.message}`;
+      const whatsappUrl = `https://wa.me/919740894949?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
+      
+      // Send to Email (using FormSubmit or your backend)
+      const emailResponse = await fetch("https://formsubmit.co/ajax/contact@shiftadda.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `New Contact: ${formData.subject}`
+        })
+      });
+
+      if (emailResponse.ok) {
+        toast.success("Message sent successfully! We'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        throw new Error("Email submission failed");
+      }
+    } catch (error) {
+      toast.error("Message could not be sent. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -53,7 +101,6 @@ export default function ContactPage() {
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl">
                 Have questions? We're here to help and would love to hear from you
               </p>
-              
             </motion.div>
           </div>
         </section>
@@ -113,13 +160,8 @@ export default function ContactPage() {
                     <h3 className="font-semibold mb-1">Email</h3>
                     <div className="space-y-1">
                       <Button variant="link" className="pl-0 h-auto" asChild>
-                        <a href="mailto:support@shiftadda.com" className="text-muted-foreground hover:text-primary">
-                          support@shiftadda.com
-                        </a>
-                      </Button>
-                      <Button variant="link" className="pl-0 h-auto" asChild>
-                        <a href="mailto:business@shiftadda.com" className="text-muted-foreground hover:text-primary">
-                          business@shiftadda.com
+                        <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary">
+                          contact@shiftadda.com
                         </a>
                       </Button>
                     </div>
@@ -154,7 +196,10 @@ export default function ContactPage() {
                         Full Name
                       </label>
                       <Input
+                        name="name"
                         placeholder="Full Name"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                       />
                     </div>
@@ -164,7 +209,10 @@ export default function ContactPage() {
                       </label>
                       <Input
                         type="email"
-                        placeholder="Email" 
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                       />
                     </div>
@@ -175,7 +223,10 @@ export default function ContactPage() {
                       Subject
                     </label>
                     <Input
+                      name="subject"
                       placeholder="How can we help?"
+                      value={formData.subject}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -185,8 +236,11 @@ export default function ContactPage() {
                       Message
                     </label>
                     <Textarea
+                      name="message"
                       placeholder="Your message..."
                       className="min-h-[150px]"
+                      value={formData.message}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -213,11 +267,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-       
       </main>
       <Footer />
     </div>
   );
-} 
+}

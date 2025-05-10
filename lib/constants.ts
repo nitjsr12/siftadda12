@@ -3,7 +3,7 @@ import { Home, Wrench, Truck, Map, Package, Warehouse, Info, Rss, Phone,Briefcas
 export const siteConfig = {
   
   name: "ShiftAdda",
-  description: "ShiftAdda – India’s trusted B2C platform for packers and movers.From local moves to intercity shifting – we’ve got you covered.Get instant quotes, compare movers, and shift stress-free.",
+  description: "ShiftAdda – India’s trusted B2C platform for packers and movers.From local moves to intercity shifting – we’ve got you covered.Get instant quotes, and shift stress-free.",
   socialLinks: [
     {
       name: "Facebook",
@@ -250,7 +250,69 @@ export const testimonials = [
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
-  
+  {
+    name: "jennifer fathy",
+    company: "Bangalore.",
+    comment: "Great experience! We recently moved from Bangalore to Chennai with ShiftAdda and were thoroughly impressed. No hidden charges, no last-minute surprises. We've done several moves before, but this was by far the smoothest and most professional packing we've experienced. The team was supportive throughout the process. 100% trustworthy—highly recommend ShiftAdda for a stress-free relocation!",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 5,
+  },
+  {
+    name: "Himanshu",
+    company: "Delhi.",
+    comment: "I was worried about my expensive furniture, but the team handled everything with care. They even helped me set up my new place!",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4,
+  },
+  {
+    name: "supriya",
+    company: "Bangalore.",
+    comment: "my experience with ShiftAdda was fantastic! The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4,
+  },
+  {
+    name: "Sandeep Kumar",
+    company: "Bangalore.",
+    comment: "i had a great experience with ShiftAdda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4,
+  },
+  {
+    name: "Aditi Sharma",
+    company: "Bangalore.",
+    comment: "I was impressed with the level of service provided by ShiftAdda. The team was professional, efficient, and took great care of my belongings. I would highly recommend them to anyone looking for a reliable moving service.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 5,
+  },
+  {
+    name: "Rahul Gupta",
+    company: "Bangalore.",
+    comment: "I had a great experience with ShiftAdda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4,
+  },
+  {
+    name: "Neha Singh",
+    company: "Bangalore.",
+    comment: "I was impressed with the level of service provided by ShiftAdda. The team was professional, efficient, and took great care of my belongings. I would highly recommend them to anyone looking for a reliable moving service.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 5,
+  },
+  {
+    name: "Vikram Singh",
+    company: "Bangalore.",
+    comment: "I had a great experience with ShiftAdda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4,
+  },
+  {
+    name: "Ravi Kumar",
+    company: "Bangalore.",
+    comment: "shiftAdda made my 2BHK move seamless! The team was punctual, careful, and friendly. I highly recommend them for anyone looking to move.",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 5,
+  },
 ];
 
 export const faqs = [

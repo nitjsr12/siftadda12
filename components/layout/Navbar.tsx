@@ -271,7 +271,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                     asChild
                     className="w-full hover:bg-[#2e2e2e] text-[#999999] hover:text-[#c0c0c0] rounded-full justify-start px-4 py-3"
                   >
-              <a href="mailto:example@email.com">Email Us</a>
+              <a href="mailto:contact@shiftadda.com">Email Us</a>
               </Button>
                   <Button
                     size="sm"
