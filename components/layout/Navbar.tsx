@@ -49,10 +49,10 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
+        "fixed top-0 w-full z-50  duration-300 bg-[#0c0d06] ",
         scrolled
-          ? "bg-[#1a1a1a]/95 backdrop-blur-md shadow-md py-2 border-b border-[#2e2e2e]"
-          : "bg-transparent py-4"
+          ? "bg-[#0c0d06] backdrop-blur-md shadow-md py-2 border-b border-[#2e2e2e]"
+          : "py-4"
       )}
     >
       <div className="container px-4 md:px-6 mx-auto">

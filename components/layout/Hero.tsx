@@ -60,6 +60,11 @@ export function Hero() {
       setIsSubmitting(false);
       return;
     }
+    if (!/^\d{10}$/.test(formData.phoneNumber)) {
+      alert("Please enter a valid 10-digit phone number");
+      setIsSubmitting(false);
+      return;
+    }
 
     const message = `*New Moving Request
 *Service Type:* ${formData.moveType}
@@ -103,7 +108,7 @@ export function Hero() {
         >
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
             <span className="bg-white bg-clip-text text-transparent">
-              Stress-Free Moving Done Right
+            Precision in Every Pack. Premium in Every Move.
             </span>
           </h1>
 
@@ -201,7 +206,7 @@ export function Hero() {
                 onClick={handleSubmit}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Processing..." : "CHeck Price"}
+                {isSubmitting ? "Processing..." : "Enquiry Now"}
               </Button>
             </div>
           </div>

@@ -106,7 +106,7 @@ export default function ServicesPage() {
       <Navbar />
       <main className="flex-1 pt-24 self-center">
         {/* Hero Section */}
-        <section className="relative py-32 md:py-40 overflow-hidden">
+        <section className="relative py-32 md:py-40 overflow-hidden w-full">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-fixed">
             <div className="absolute inset-0 bg-background/80" />
           </div>

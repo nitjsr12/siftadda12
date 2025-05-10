@@ -93,8 +93,8 @@ export function Footer() {
                   <div>
                     <h4 className="font-semibold">Our Location</h4>
                     <address className="text-muted-foreground not-italic mt-1">
-                    13th Cross 27th main , Sector-2 phase 1
-                    HSR Layout , Bengaluru 560102
+                    #677,27th main ,13th Cross, Sector 1, HSR LAYOUT  Bengaluru 
+                    560102
                     </address>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export function Footer() {
       </AnimatePresence>
 
       {/* Footer */}
-      <footer className="border-t bg-background">
+      <footer className="border-t bg-[#0c0d06]">
         <div className="container px-4 md:px-6 py-12 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div className="md:col-span-2">
@@ -208,8 +208,8 @@ export function Footer() {
                 <li className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">
-                  13th Cross 27th main , Sector-2 phase 1
-                  HSR Layout , Bengaluru 560102
+                  #677,27th main ,13th Cross, Sector 1, HSR LAYOUT  Bengaluru 
+                  560102
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
