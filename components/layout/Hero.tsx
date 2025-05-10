@@ -61,18 +61,18 @@ export function Hero() {
       return;
     }
 
-    const message = `*New Moving Request*%0A%0A
-*Service Type:* ${formData.moveType}%0A
-*Pickup Location:* ${formData.pickupLocation}%0A
-*Drop Location:* ${formData.dropLocation}%0A
-*Phone Number:* ${formData.phoneNumber}%0A
+    const message = `*New Moving Request
+*Service Type:* ${formData.moveType}
+*Pickup Location:* ${formData.pickupLocation}
+*Drop Location:* ${formData.dropLocation}
+*Phone Number:* ${formData.phoneNumber}
 *Moving Date:* ${
       formData.date ? format(formData.date, "dd/MM/yyyy") : "Not specified"
     }`;
 
     const encodedMessage = encodeURIComponent(message.trim());
     window.open(
-      `https://wa.me/917256889395?text=${encodedMessage}`,
+      `https://wa.me/919991253250?text=${encodedMessage}`,
       "_blank"
     );
 

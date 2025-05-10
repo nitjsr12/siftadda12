@@ -177,7 +177,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
 
           {/* Mobile Nav Toggle */}
           <div className="flex items-center space-x-4 md:hidden">
-            <ThemeToggle />
+            
             <motion.button
               whileTap={{ scale: 0.9 }}
               className="focus:outline-none p-2 rounded-lg hover:bg-[#2e2e2e]"
@@ -271,14 +271,17 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                     asChild
                     className="w-full hover:bg-[#2e2e2e] text-[#999999] hover:text-[#c0c0c0] rounded-full justify-start px-4 py-3"
                   >
-                    <Link href="/signin">Sign In</Link>
-                  </Button>
+              <a href="mailto:example@email.com">Email Us</a>
+              </Button>
                   <Button
                     size="sm"
                     asChild
                     className="w-full bg-[#c0c0c0] hover:bg-[#d4d4d4] text-black rounded-full px-4 py-3"
                   >
-                    <Link href="/signup">Get Started</Link>
+                   <a href="tel:+919876543210">
+                  <PhoneCall className="w-4 h-4" />
+                  Call Now
+                </a>
                   </Button>
                 </div>
               </nav>
