@@ -93,20 +93,7 @@ export function Testimonials() {
             ))}
           </div>
 
-          <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-background rounded-full p-2 shadow-md hover:bg-muted transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-background rounded-full p-2 shadow-md hover:bg-muted transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
+         
         </div>
     </section>
   );

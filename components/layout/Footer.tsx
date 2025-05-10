@@ -142,10 +142,20 @@ export function Footer() {
         <div className="container px-4 md:px-6 py-12 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div className="md:col-span-2">
-              <Link href="/" className="flex items-center space-x-2">
-                <TruckIcon className="h-6 w-6 text-primary" />
-                <span className="font-bold text-xl">{siteConfig.name}</span>
-              </Link>
+            <Link href="/" className="flex items-center space-x-2 group">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <img
+                src="/images/logo.jpg"
+                alt="Logo"
+                className="h-[90px] w-auto transition-all duration-300 group-hover:opacity-90"
+              />
+            </motion.div>
+          </Link>
+
               <p className="mt-3 text-muted-foreground text-sm">
                 {siteConfig.description}
               </p>
