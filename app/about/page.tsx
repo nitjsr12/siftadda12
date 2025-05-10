@@ -117,44 +117,44 @@ export default function AboutPage() {
 
           {/* Stats Section with Animated Counters */}
           <section className="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
-          <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { number: 5000, suffix: "+", label: "Businesses Served" },
-                { number: 1000, suffix: "+", label: "Verified Providers" },
-                { number: 50, suffix: "+", label: "Cities Covered" },
-                { number: 98, suffix: "%", label: "Satisfaction Rate" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0, transition: { delay: index * 0.1 } }
-                  }}
-                  className="text-center"
-                >
-                  <div className="text-3xl md:text-5xl font-bold text-primary mb-2">
-                    <motion.span
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                    >
-                      {stat.number}
-                    </motion.span>
-                    {stat.suffix}
-                  </div>
-                  <div className="text-sm md:text-base text-muted-foreground">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
+  <div className="container px-4 md:px-6 mx-auto">
+    <div className="flex flex-col items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {[
+          { number: 1000, suffix: "+", label: "Happy Customers" },
+          { number: 40, suffix: "+", label: "Cities Covered" },
+          { number: 98, suffix: "%", label: "Satisfaction Rate" },
+        ].map((stat, index) => (
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { delay: index * 0.1 } }
+            }}
+            className="text-center"
+          >
+            <div className="text-3xl md:text-5xl font-bold text-primary mb-2">
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                {stat.number}
+              </motion.span>
+              {stat.suffix}
             </div>
-          </div>
-        </section>
-
+            <div className="text-sm md:text-base text-muted-foreground">
+              {stat.label}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
         {/* Mission & Vision Tabs */}
         <section className="py-16 md:py-24 justify-items-center">
           <div className="container px-4 md:px-6">

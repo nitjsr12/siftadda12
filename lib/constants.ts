@@ -3,7 +3,7 @@ import { Home, Wrench, Truck, Map, Package, Warehouse, Info, Rss, Phone,Briefcas
 export const siteConfig = {
   
   name: "ShiftAdda",
-  description: "The premier B2B platform connecting businesses with professional packers and movers.",
+  description: "ShiftAdda – India’s trusted B2C platform for packers and movers.From local moves to intercity shifting – we’ve got you covered.Get instant quotes, compare movers, and shift stress-free.",
   socialLinks: [
     {
       name: "Facebook",

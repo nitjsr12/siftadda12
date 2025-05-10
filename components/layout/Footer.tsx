@@ -49,7 +49,7 @@ export function Footer() {
         className={`fixed bottom-6 right-6 z-50 ${isVisible ? 'block' : 'hidden'}`}
       >
         <a
-          href="https://wa.me/919991253250"
+          href="https://wa.me/919740894949"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
@@ -180,9 +180,9 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 {siteConfig.services.map((service) => (
                   <li key={service.name}>
-                    <Link href={service.href} className="text-muted-foreground hover:text-primary">
+                    {/* <Link href={service.href} className="text-muted-foreground hover:text-primary">
                       {service.name}
-                    </Link>
+                    </Link> */}
                   </li>
                 ))}
               </ul>
