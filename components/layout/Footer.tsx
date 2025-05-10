@@ -105,8 +105,8 @@ export function Footer() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Call Us</h4>
-                    <a href="tel:+919991253250" className="text-muted-foreground hover:text-primary mt-1 block">
-                    +91 9991253250
+                    <a href="tel:+919740894949" className="text-muted-foreground hover:text-primary mt-1 block">
+                    +91 9740894949
                     </a>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export function Footer() {
                 <li className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-primary" />
                   <a href="tel:+91991253250" className="text-muted-foreground hover:text-primary">
-                    +91 9991253250
+                    +91 9740894949
                   </a>
                 </li>
                 <li className="flex items-center gap-2">

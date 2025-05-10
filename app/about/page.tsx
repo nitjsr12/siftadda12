@@ -7,6 +7,7 @@ import { Building2, Users, Award, Globe, ArrowRight, Target, Handshake, Shield, 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import  Link  from "next/link";
 
 export default function AboutPage() {
   const fadeIn = {
@@ -106,7 +107,9 @@ export default function AboutPage() {
                 Revolutionizing business relocation through technology, transparency, and trust
               </p>
               <Button variant="outline" className="gap-2">
+                <Link href="/services" className="flex items-center">
                 Explore Our Services <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </motion.div>
           </div>

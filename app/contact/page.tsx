@@ -99,8 +99,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
                     <Button variant="link" className="pl-0 h-auto" asChild>
-                      <a href="tel:+919991253250" className="text-muted-foreground hover:text-primary">
-                        +91 9991253250
+                      <a href="tel:+919740894949" className="text-muted-foreground hover:text-primary">
+                        +91 9740894949
                       </a>
                     </Button>
                   </div>

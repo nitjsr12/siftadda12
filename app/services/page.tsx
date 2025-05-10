@@ -7,6 +7,7 @@ import { Truck, Box, Warehouse, Building2, Cpu, ShieldCheck, ArrowRight, Phone, 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import  Link  from "next/link";
 
 export default function ServicesPage() {
   const fadeIn = {
@@ -125,7 +126,9 @@ export default function ServicesPage() {
                 Comprehensive relocation solutions tailored to your business needs
               </p>
               <Button size="lg" className="gap-2">
+                <Link href="/contact" className="flex items-center">
                 Get a Free Quote <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </motion.div>
           </div>
