@@ -66,7 +66,7 @@ export function Hero() {
       return;
     }
 
-    const message = `*New Moving Request
+    const message = `*New Moving Request*
 *Service Type:* ${formData.moveType}
 *Pickup Location:* ${formData.pickupLocation}
 *Drop Location:* ${formData.dropLocation}
@@ -77,7 +77,7 @@ export function Hero() {
 
     const encodedMessage = encodeURIComponent(message.trim());
     window.open(
-      `https://wa.me/919991253250?text=${encodedMessage}`,
+      `https://wa.me/919740894949?text=${encodedMessage}`,
       "_blank"
     );
 

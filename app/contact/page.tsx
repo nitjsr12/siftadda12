@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { MapPin, Phone, Mail, Clock, Send, Loader2, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Loader2, ArrowRight, Link as LucideLink } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,9 +53,7 @@ export default function ContactPage() {
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl">
                 Have questions? We're here to help and would love to hear from you
               </p>
-              <Button variant="outline" className="gap-2">
-                Get Started <ArrowRight className="h-4 w-4" />
-              </Button>
+              
             </motion.div>
           </div>
         </section>

@@ -59,13 +59,13 @@ export function HowItWorks() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <Button size="lg" asChild>
             <Link href="/providers">
               Find Movers Now <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

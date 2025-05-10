@@ -167,7 +167,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                 asChild
                 className="bg-[#c0c0c0] hover:bg-[#d4d4d4] text-black shadow-lg hover:shadow-xl transition-all rounded-full px-5 flex items-center gap-2"
               >
-                <a href="tel:+919876543210">
+                <a href="tel:+919740894949">
                   <PhoneCall className="w-4 h-4" />
                   Call Now
                 </a>
@@ -278,7 +278,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
                     asChild
                     className="w-full bg-[#c0c0c0] hover:bg-[#d4d4d4] text-black rounded-full px-4 py-3"
                   >
-                   <a href="tel:+919876543210">
+                   <a href="tel:+919740894949">
                   <PhoneCall className="w-4 h-4" />
                   Call Now
                 </a>

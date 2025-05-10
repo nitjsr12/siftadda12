@@ -372,7 +372,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary">
+        {/* <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary">
           <div className="container px-4 md:px-6">
             <motion.div
               initial="hidden"
@@ -397,7 +397,7 @@ export default function ServicesPage() {
               </div>
             </motion.div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>
