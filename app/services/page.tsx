@@ -333,7 +333,7 @@ export default function ServicesPage() {
                 variants={fadeIn}
               >
                 <h2 className="text-3xl font-bold tracking-tight mb-6">
-                  Why Businesses Choose ShiftAdda
+                  Why Businesses Choose Shiftadda
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
                   We go beyond traditional moving services to provide a comprehensive relocation experience tailored to modern business needs.
@@ -361,11 +361,11 @@ export default function ServicesPage() {
                 variants={fadeIn}
                 className="bg-[url('https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center rounded-xl aspect-video"
               >
-                <div className="h-full w-full bg-gradient-to-r from-primary/30 to-secondary/30 rounded-xl flex items-center justify-center">
+                {/* <div className="h-full w-full bg-gradient-to-r from-primary/30 to-secondary/30 rounded-xl flex items-center justify-center">
                   <Button variant="secondary" size="lg" className="gap-2">
                     Watch Our Process <ArrowRight className="h-4 w-4" />
                   </Button>
-                </div>
+                </div> */}
               </motion.div>
             </div>
           </div>

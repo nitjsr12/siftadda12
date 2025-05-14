@@ -44,7 +44,7 @@ export default function ContactPage() {
       window.open(whatsappUrl, '_blank');
       
       // Send to Email (using FormSubmit or your backend)
-      const emailResponse = await fetch("https://formsubmit.co/ajax/contact@shiftadda.com", {
+      const emailResponse = await fetch("https://formsubmit.co/ajax/contact@Shiftadda.com", {
         method: "POST",
         headers: { 
           'Content-Type': 'application/json',
@@ -160,8 +160,8 @@ export default function ContactPage() {
                     <h3 className="font-semibold mb-1">Email</h3>
                     <div className="space-y-1">
                       <Button variant="link" className="pl-0 h-auto" asChild>
-                        <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary">
-                          contact@shiftadda.com
+                        <a href="mailto:contact@Shiftadda.com" className="text-muted-foreground hover:text-primary">
+                          contact@Shiftadda.com
                         </a>
                       </Button>
                     </div>

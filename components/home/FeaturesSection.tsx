@@ -136,7 +136,7 @@ export function BusinessFeatures() {
   return (
     <FeaturesSection
       title="Our Promise to You"
-      subtitle="At ShiftAdda, we believe moving should be simple, affordable, and worry-free. With 5+ years of logistics experience and a team of trained professionals, we handle every move with care – from packing delicate items to safely delivering them to your new home or office."
+      subtitle="At Shiftadda, we believe moving should be simple, affordable, and worry-free. With 5+ years of logistics experience and a team of trained professionals, we handle every move with care – from packing delicate items to safely delivering them to your new home or office."
       features={businessFeatures}
       image="/images/services (1).png"
       altText="Business office moving"

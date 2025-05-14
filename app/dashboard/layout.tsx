@@ -101,7 +101,7 @@ export default function DashboardLayout({
         <div className="h-full px-3 py-4 flex flex-col">
           <div className="mb-6 px-3 py-2">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold">ShiftAdda</span>
+              <span className="text-2xl font-bold">Shiftadda</span>
             </Link>
           </div>
           <Separator className="mb-4" />

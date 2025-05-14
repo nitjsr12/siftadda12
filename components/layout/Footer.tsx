@@ -117,8 +117,8 @@ export function Footer() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Email Us</h4>
-                    <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary mt-1 block">
-                    contact@shiftadda.com
+                    <a href="mailto:contact@Shiftadda.com" className="text-muted-foreground hover:text-primary mt-1 block">
+                    contact@Shiftadda.com
                     </a>
                   </div>
                 </div>
@@ -220,8 +220,8 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-primary" />
-                  <a href="mailto:contact@shiftadda.com" className="text-muted-foreground hover:text-primary">
-                  contact@shiftadda.com
+                  <a href="mailto:contact@Shiftadda.com" className="text-muted-foreground hover:text-primary">
+                  contact@Shiftadda.com
                   </a>
                 </li>
               </ul>

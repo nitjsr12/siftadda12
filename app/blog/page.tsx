@@ -83,7 +83,7 @@ export default function BlogPage() {
               className="w-full text-center flex flex-col items-center justify-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 gradient-text">
-                ShiftAdda Blog
+                Shiftadda Blog
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl">
                 Expert insights, tips, and guides for business relocation

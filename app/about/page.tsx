@@ -22,13 +22,13 @@ export default function AboutPage() {
       icon: <Phone className="h-6 w-6" />
     },
     {
-      title: "Compare & Select",
+      title: "Select",
       description: "Review profiles, ratings and choose your mover",
       icon: <Handshake className="h-6 w-6" />
     },
     {
       title: "Schedule Your Move",
-      description: "Pick a date that works for your business",
+      description: "Pick a date that works for you",
       icon: <Clock className="h-6 w-6" />
     },
     {
@@ -101,7 +101,7 @@ export default function AboutPage() {
               className="w-full text-center flex flex-col items-center justify-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 gradient-text">
-                About ShiftAdda
+                About Shiftadda
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl">
                 Revolutionizing business relocation through technology, transparency, and trust
@@ -176,7 +176,7 @@ export default function AboutPage() {
                     Driving Business Mobility Forward
                   </h2>
                   <p className="text-lg text-muted-foreground text-center">
-                    At ShiftAdda, we're on a mission to eliminate the stress and uncertainty from business relocation. We combine cutting-edge technology with a network of verified professionals to deliver seamless moving experiences.
+                  At Shiftadda, we're on a mission to eliminate the stress and uncertainty from both business and household relocations. By combining cutting-edge technology with a trusted network of verified professionals, we deliver seamless, end-to-end moving experiences. From standard moves to premium services tailored for delicate or high-value items, Shiftadda ensures every relocation is smooth, reliable, and hassle-free.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6 pt-6">
                     <Card>
@@ -212,10 +212,10 @@ export default function AboutPage() {
                 >
                   <Globe className="h-12 w-12 text-primary mx-auto" />
                   <h2 className="text-3xl font-bold tracking-tight text-center">
-                    Redefining Business Relocation Globally
+                  Premium Relocation. For Homes. For Businesses
                   </h2>
                   <p className="text-lg text-muted-foreground text-center">
-                    We envision a world where business relocation is as simple as clicking a button - where companies can expand, relocate, or restructure without logistical headaches.
+                  We envision a world where relocation—be it for businesses or households—is as simple as clicking a button. A future where companies and families alike can expand, move, or restructure without logistical headaches, backed by reliable support and premium services tailored to their unique needs
                   </p>
                   <div className="grid md:grid-cols-2 gap-6 pt-6">
                     <Card>
@@ -234,7 +234,7 @@ export default function AboutPage() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-muted-foreground">
-                          Setting new standards for transparency and reliability in the business relocation industry.
+                        Delivering unmatched reliability and openness in the relocation industry—for homes and businesses alike.
                         </p>
                       </CardContent>
                     </Card>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 Our Relocation Process
               </h2>
               <p className="text-lg text-muted-foreground">
-                Simple, transparent, and designed for business continuity
+                Simple, transparent, and designed for business and home  continuity
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -286,51 +286,51 @@ export default function AboutPage() {
         </section>
 
         {/* Core Values Section */}
-        <section className="py-16 md:py-24 justify-items-center ">
-          <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeIn}
-              >
-                <h2 className="text-3xl font-bold tracking-tight mb-6">
-                  Our Core Values
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  These principles guide every decision we make and every interaction we have with our customers and partners.
-                </p>
-                <Button variant="outline" className="gap-2">
-                  Learn About Our Standards <ArrowRight className="h-4 w-4" />
-                </Button>
-              </motion.div>
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeIn}
-                className="grid grid-cols-2 gap-6"
-              >
-                {values.map((value, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow">
-                    <CardHeader className="flex-row items-center space-y-0 space-x-4">
-                      <div className="p-2 bg-primary/10 rounded-full">
-                        {value.icon}
-                      </div>
-                      <CardTitle className="text-lg">{value.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">
-                        {value.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
+<section className="py-12 sm:py-16 md:py-24 lg:py-28 justify-items-center">
+  <div className="container px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4 sm:mb-6">
+          Our Core Values
+        </h2>
+        <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">
+          These principles guide every decision we make and every interaction we have with our customers and partners.
+        </p>
+        <Button variant="outline" className="gap-2">
+          Learn About Our Standards <ArrowRight className="h-4 w-4" />
+        </Button>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+      >
+        {values.map((value, index) => (
+          <Card key={index} className="hover:shadow-md transition-shadow">
+            <CardHeader className="flex-row items-center space-y-0 space-x-3 sm:space-x-4">
+              <div className="p-2 bg-primary/10 rounded-full">
+                {value.icon}
+              </div>
+              <CardTitle className="text-base sm:text-lg">{value.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                {value.description}
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </motion.div>
+    </div>
+  </div>
+</section>
       </main>
       <Footer />
     </div>

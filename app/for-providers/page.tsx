@@ -14,7 +14,7 @@ export default function ForProvidersPage() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                Grow Your Moving Business with ShiftAdda
+                Grow Your Moving Business with Shiftadda
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/80 mb-8">
                 Join our network of trusted moving providers and connect with quality business clients looking for your services.
@@ -34,7 +34,7 @@ export default function ForProvidersPage() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Why Choose ShiftAdda?
+                Why Choose Shiftadda?
               </h2>
               <p className="text-muted-foreground text-lg">
                 Join the platform that puts your business growth first
@@ -102,7 +102,7 @@ export default function ForProvidersPage() {
                 Ready to expand your moving business?
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Join ShiftAdda today and start connecting with businesses looking for quality moving services.
+                Join Shiftadda today and start connecting with businesses looking for quality moving services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>

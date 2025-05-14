@@ -2,8 +2,8 @@ import { Home, Wrench, Truck, Map, Package, Warehouse, Info, Rss, Phone,Briefcas
 
 export const siteConfig = {
   
-  name: "ShiftAdda",
-  description: "ShiftAdda – India’s trusted B2C platform for packers and movers.From local moves to intercity shifting – we’ve got you covered.Get instant quotes, and shift stress-free.",
+  name: "Shiftadda",
+  description: "Shiftadda – India’s trusted B2C platform for packers and movers.From local moves to intercity shifting – we’ve got you covered.Get instant quotes, and shift stress-free.",
   socialLinks: [
     {
       name: "Facebook",
@@ -17,7 +17,7 @@ export const siteConfig = {
     },
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/Shiftadda-com/",
       icon: LinkedinIcon // Import from lucide-react
     },
     {
@@ -30,19 +30,19 @@ export const siteConfig = {
   services: [
     {
       name: "Local Moving",
-      href: "/local-moving"
+      href: "/services"
     },
     {
       name: "Long Distance Moving",
-      href: "/long-distance-moving"
+      href: "/services"
     },
     {
       name: "Packing Services",
-      href: "/packing-services"
+      href: "/services"
     },
     {
       name: "Storage Solutions",
-      href: "/storage-solutions"
+      href: "/services"
     },
     
     // Add other services
@@ -228,14 +228,14 @@ export const testimonials = [
   {
     name: "Ankit R",
     company: "HSR Layout",
-    comment: "ShiftAdda made my 2BHK move seamless! The team was punctual, careful, and friendly.",
+    comment: "Shiftadda made my 2BHK move seamless! The team was punctual, careful, and friendly.",
     image: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 5,
   },
   {
     name: "Priya M",
     company: "Whitefield.",
-    comment: "I’ve used big-name movers before, but ShiftAdda’s service was better and affordable.",
+    comment: "I’ve used big-name movers before, but Shiftadda’s service was better and affordable.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
@@ -250,49 +250,49 @@ export const testimonials = [
   {
     name: "supriya",
     company: "Bangalore.",
-    comment: "my experience with ShiftAdda was fantastic! The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    comment: "my experience with Shiftadda was fantastic! The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
   {
     name: "Sandeep Kumar",
     company: "Bangalore.",
-    comment: "i had a great experience with ShiftAdda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    comment: "i had a great experience with Shiftadda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
   {
     name: "Aditi Sharma",
     company: "Bangalore.",
-    comment: "I was impressed with the level of service provided by ShiftAdda. The team was professional, efficient, and took great care of my belongings. I would highly recommend them to anyone looking for a reliable moving service.",
+    comment: "I was impressed with the level of service provided by Shiftadda. The team was professional, efficient, and took great care of my belongings. I would highly recommend them to anyone looking for a reliable moving service.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 5,
   },
   {
     name: "Rahul Gupta",
     company: "Bangalore.",
-    comment: "I had a great experience with ShiftAdda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    comment: "I had a great experience with Shiftadda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
   {
     name: "Neha Singh",
     company: "Bangalore.",
-    comment: "I was impressed with the level of service provided by ShiftAdda. The team was professional, efficient, and took great care of my belongings. I would highly recommend them to anyone looking for a reliable moving service.",
+    comment: "I was impressed with the level of service provided by Shiftadda. The team was professional, efficient, and took great care of my belongings. I would highly recommend them to anyone looking for a reliable moving service.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 5,
   },
   {
     name: "Vikram Singh",
     company: "Bangalore.",
-    comment: "I had a great experience with ShiftAdda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
+    comment: "I had a great experience with Shiftadda. The team was professional, punctual, and took great care of my belongings. They made the entire process smooth and stress-free. I highly recommend them for anyone looking to move.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
   {
     name: "Ravi Kumar",
     company: "Bangalore.",
-    comment: "shiftAdda made my 2BHK move seamless! The team was punctual, careful, and friendly. I highly recommend them for anyone looking to move.",
+    comment: "Shiftadda made my 2BHK move seamless! The team was punctual, careful, and friendly. I highly recommend them for anyone looking to move.",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 5,
   },
@@ -300,24 +300,24 @@ export const testimonials = [
 
 export const faqs = [
   {
-    question: "How does ShiftAdda vet service providers?",
+    question: "How does Shiftadda vet service providers?",
     answer: "We have a rigorous verification process that includes business registration checks, insurance verification, service history review, and customer feedback analysis. Only providers meeting our quality standards are featured on our platform."
   },
   {
-    question: "What kind of businesses can use ShiftAdda?",
-    answer: "ShiftAdda caters to businesses of all sizes - from small startups to large enterprises. Whether you're relocating an office, moving inventory between warehouses, or need specialized equipment transport, our platform connects you with the right professionals."
+    question: "What kind of businesses can use Shiftadda?",
+    answer: "Shiftadda caters to businesses of all sizes - from small startups to large enterprises. Whether you're relocating an office, moving inventory between warehouses, or need specialized equipment transport, our platform connects you with the right professionals."
   },
   {
     question: "How quickly can I expect quotes after submitting my requirements?",
     answer: "Most businesses receive their first quotes within 24 hours of submitting their requirements. For urgent moves, you can indicate your timeline, and our system will prioritize your request with providers who can accommodate expedited services."
   },
   {
-    question: "Is there a fee to use ShiftAdda as a business?",
+    question: "Is there a fee to use Shiftadda as a business?",
     answer: "Businesses can browse providers and request quotes for free. We only charge a small service fee when you confirm a booking through our platform, which helps us maintain the quality of our service and provide booking protection."
   },
   {
     question: "What if I'm not satisfied with the moving service?",
-    answer: "Customer satisfaction is our priority. All bookings through ShiftAdda include our Service Guarantee. If a service doesn't meet the agreed standards, our dedicated resolution team will work with you and the provider to resolve the issue."
+    answer: "Customer satisfaction is our priority. All bookings through Shiftadda include our Service Guarantee. If a service doesn't meet the agreed standards, our dedicated resolution team will work with you and the provider to resolve the issue."
   }
 ];
 

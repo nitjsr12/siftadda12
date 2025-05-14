@@ -83,7 +83,7 @@ export default function SignUpPage() {
           </Link>
           
           <h1 className="text-2xl font-bold tracking-tight">
-            Create your ShiftAdda account
+            Create your Shiftadda account
           </h1>
           <p className="text-muted-foreground mt-2">
             Join our platform and start connecting

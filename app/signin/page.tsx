@@ -75,7 +75,7 @@ export default function SignInPage() {
           </Link>
           
           <h1 className="text-2xl font-bold tracking-tight">
-            Welcome back to ShiftAdda
+            Welcome back to Shiftadda
           </h1>
           <p className="text-muted-foreground mt-2">
             Enter your credentials to access your account
