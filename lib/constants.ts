@@ -44,18 +44,7 @@ export const siteConfig = {
       name: "Storage Solutions",
       href: "/storage-solutions"
     },
-    {
-      name: "Find Movers",
-      href: "/find-movers"
-    },
-    {
-      name: "For Businesses",
-      href: "/for-businesses"
-    },
-    {
-      name: "For Providers",
-      href: "/for-providers"
-    },
+    
     // Add other services
   ],
   companyLinks: [
@@ -250,13 +239,7 @@ export const testimonials = [
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4,
   },
-  {
-    name: "jennifer fathy",
-    company: "Bangalore.",
-    comment: "Great experience! We recently moved from Bangalore to Chennai with ShiftAdda and were thoroughly impressed. No hidden charges, no last-minute surprises. We've done several moves before, but this was by far the smoothest and most professional packing we've experienced. The team was supportive throughout the process. 100% trustworthy—highly recommend ShiftAdda for a stress-free relocation!",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
-    rating: 5,
-  },
+  
   {
     name: "Himanshu",
     company: "Delhi.",
