@@ -129,7 +129,7 @@ export function Footer() {
                 <div className="text-muted-foreground space-y-1">
                   <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
                   <p>Saturday: 9:00 AM - 6:00 PM</p>
-                  <p>Sunday: Emergency services only</p>
+                  <p>Sunday: 9:00 AM - 6:00 PM</p>
                 </div>
               </div>
             </motion.div>
