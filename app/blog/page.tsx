@@ -18,7 +18,7 @@ const blogPosts = [
     image: "https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg",
     category: "Office Moving",
     author: "Priya Sharma",
-    date: "2024-03-20",
+    date: "2025-05-10",
     readTime: "5 min read"
   },
   {
@@ -28,7 +28,7 @@ const blogPosts = [
     image: "https://images.pexels.com/photos/6169659/pexels-photo-6169659.jpeg",
     category: "Equipment",
     author: "Rajesh Kumar",
-    date: "2024-03-18",
+    date: "2025-05-10",
     readTime: "8 min read"
   },
   {
@@ -38,19 +38,10 @@ const blogPosts = [
     image: "https://images.pexels.com/photos/6170464/pexels-photo-6170464.jpeg",
     category: "Sustainability",
     author: "Amit Patel",
-    date: "2024-03-15",
+    date: "2025-05-15",
     readTime: "6 min read"
   },
-  {
-    id: 4,
-    title: "How to Choose the Right Moving Service for Your Business",
-    excerpt: "A detailed comparison of different moving services and what factors to consider when selecting the best option for your business needs.",
-    image: "https://images.pexels.com/photos/6170441/pexels-photo-6170441.jpeg",
-    category: "Tips",
-    author: "Sarah Johnson",
-    date: "2024-03-12",
-    readTime: "7 min read"
-  }
+  
 ];
 
 export default function BlogPage() {
@@ -118,7 +109,7 @@ export default function BlogPage() {
                   whileHover={{ y: -5 }}
                   className="bg-card rounded-xl overflow-hidden border hover:shadow-md transition-all"
                 >
-                  <Link href={`/blog/${post.id}`}>
+                  <Link href={``}>
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={post.image}

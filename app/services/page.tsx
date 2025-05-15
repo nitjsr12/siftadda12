@@ -173,9 +173,7 @@ export default function ServicesPage() {
                             </li>
                           ))}
                         </ul>
-                        <Button variant="link" className="pl-0 mt-4 gap-2">
-                          Learn more <ArrowRight className="h-4 w-4" />
-                        </Button>
+                        
                       </CardContent>
                     </Card>
                   ))}
@@ -211,9 +209,6 @@ export default function ServicesPage() {
                             </li>
                           ))}
                         </ul>
-                        <Button variant="link" className="pl-0 mt-4 gap-2">
-                          Learn more <ArrowRight className="h-4 w-4" />
-                        </Button>
                       </CardContent>
                     </Card>
                   ))}
@@ -249,9 +244,7 @@ export default function ServicesPage() {
                             </li>
                           ))}
                         </ul>
-                        <Button variant="link" className="pl-0 mt-4 gap-2">
-                          Learn more <ArrowRight className="h-4 w-4" />
-                        </Button>
+                       
                       </CardContent>
                     </Card>
                   ))}

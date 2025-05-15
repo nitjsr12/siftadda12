@@ -49,37 +49,29 @@ export const siteConfig = {
   ],
   companyLinks: [
     {
+      name: "Home",
+      href: "/"
+    },
+   
+    {
       name: "About Us",
       href: "/about"
     },
-    {
-      name: "Careers",
-      href: "/careers"
-    },
-    {
-      name: "Blog",
-      href: "/blog"
-    },
-    {
+    
+    
+     {
+      name: "Services",
+      href: "/services"
+     },
+     {
       name: "Contact Us",
       href: "/contact"
     },
-    {
-      name: "Terms of Service",
-      href: "/terms"
-    },
-    {
-      name: "FAQ",
-      href: "/faq"
-    },
-
+    
     // Add other company links
   ],
   footerLinks: [
-    {
-      name: "Privacy Policy",
-      href: "/privacy"
-    },
+    
     // Add other footer links
   ],
   mainNav: [
