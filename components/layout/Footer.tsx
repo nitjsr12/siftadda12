@@ -239,13 +239,7 @@ export function Footer() {
           <div className="mt-10 pt-8 border-t text-center text-sm text-muted-foreground">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-              <div className="flex space-x-6">
-                {siteConfig.footerLinks.map((link) => (
-                  <Link key={link.name} href={link.href} className="hover:text-primary">
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+              
             </div>
           </div>
         </div>
