@@ -169,7 +169,7 @@ export function Navbar({ items = siteConfig.mainNav }: NavbarProps) {
               >
                 <a href="tel:+919740894949">
                   <PhoneCall className="w-4 h-4" />
-                  Call Now
+                  +91 9740894949
                 </a>
               </Button>
             </motion.div>
