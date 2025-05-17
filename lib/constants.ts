@@ -7,7 +7,7 @@ export const siteConfig = {
   socialLinks: [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/profile.php?id=61575993432471",
       icon: FacebookIcon // Import from lucide-react
     },
     {
@@ -20,11 +20,7 @@ export const siteConfig = {
       href: "https://www.linkedin.com/company/Shiftadda-com/",
       icon: LinkedinIcon // Import from lucide-react
     },
-    {
-      name: "Twitter",
-      href: "#",
-      icon: X // Import from lucide-react
-    },
+    
     
   ],
   services: [
